@@ -5,11 +5,18 @@ Globals:
   Api:
     EndpointConfiguration: REGIONAL
 
+  Function:
+    Environment:
+      Variables:
+        EPSAGON_ENTRY_POINT: bookapp.StreamLambdaHandler::handleRequest
+        EPSAGON_TOKEN: <your_token>
+        EPSAGON_APP_NAME: book_app
+
 Resources:
   BookServiceFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: bookapp.StreamLambdaHandler::handleRequest
+      Handler: com.epsagon.EpsagonRequestHandler
       Runtime: java8
       CodeUri: target/book-service-1.0-SNAPSHOT-lambda-package.zip
       MemorySize: 512
