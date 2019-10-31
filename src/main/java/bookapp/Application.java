@@ -16,13 +16,13 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bookapp.controller.PingController;
+import bookapp.controller.BookController;
 
 
 @SpringBootApplication
 // We use direct @Import instead of @ComponentScan to speed up cold starts
 // @ComponentScan(basePackages = "bookapp.controller")
-@Import({ PingController.class })
+@Import({ BookController.class })
 public class Application extends SpringBootServletInitializer {
 
     /*
